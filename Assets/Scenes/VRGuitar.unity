@@ -577,6 +577,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &183370068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183370056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f01f496d53716a408dfdef2aaed7f8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RightHandPosition: {x: 0, y: 0, z: 0}
+  RightHandRotationQ: {x: 0, y: 0, z: 0, w: 0}
+  RightHandRotation: {x: 0, y: 0, z: 0}
+  RightHandVelocity: {x: 0, y: 0, z: 0}
+  RightHandAngularVelocity: {x: 0, y: 0, z: 0}
+  RightHandAngularVelocityMagnitude: 0
 --- !u!1 &198698463
 GameObject:
   m_ObjectHideFlags: 0
@@ -2710,6 +2728,7 @@ MonoBehaviour:
   midiStreamPlayer: {fileID: 1096708717}
   MidiLoader: {fileID: 488248892}
   chord: 0
+  rightRecorder: {fileID: 183370068}
 --- !u!1 &911163058
 GameObject:
   m_ObjectHideFlags: 0

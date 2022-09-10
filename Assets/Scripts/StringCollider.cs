@@ -16,6 +16,7 @@ namespace VRGuitar
 
         private MPTKEvent NotePlaying;
         public Chords chord;
+        public RightHandRecorder rightRecorder;
 
         // Start is called before the first frame update
         void Start()
@@ -26,7 +27,7 @@ namespace VRGuitar
         // Update is called once per frame
         void Update()
         {
-            
+            //Debug.Log(rightRecorder.RightHandAngularVelocity);
         }
 
         void OnTriggerEnter(Collider other)    //弦とオブジェクトが重なったときに
@@ -51,6 +52,19 @@ namespace VRGuitar
             else if (chord == Chords.F) { midiFilePlayer.MPTK_MidiName = "F"; }
             else if (chord == Chords.G) { midiFilePlayer.MPTK_MidiName = "G"; }
             Debug.Log(midiFilePlayer.MPTK_MidiName);
+
+            //右手の速度を取得してボリュームを変更
+            //if (rightRecorder.RightHandAngularVelocityMagnitude > 10.0f)
+            //{
+            //    midiFilePlayer.MPTK_ChannelVolumeSet(0, 1.0f);
+            //    Debug.Log("Set Volume: " + 1.0f);
+            //}
+            //else
+            //{
+            //    midiFilePlayer.MPTK_ChannelVolumeSet(0, 0.5f);
+            //    Debug.Log("Set Volume: " + 0.5f);
+            //}
+
             midiFilePlayer.MPTK_Play();
         }
 
