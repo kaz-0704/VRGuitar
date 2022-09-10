@@ -4,8 +4,15 @@ using UnityEngine;
 
 namespace VRGuitar
 {
-    public enum Chord
+    public enum Chords
     {
-        A, Am, A7, Aadd9
+        None,
+        A,
+        B,
+        C,
+        D,
+        E,
+        F,
+        G,
     }
 }
