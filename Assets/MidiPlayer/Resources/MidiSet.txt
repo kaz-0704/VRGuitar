@@ -34,8 +34,12 @@
     <string>Blues Image - Ride Captain Ride</string>
     <string>Bobby Blue Bland - A Touch Of Blues</string>
     <string>Buddy Guy - Midnight Train</string>
+    <string>C</string>
+    <string>C_</string>
     <string>Christopher Cross - Sailing</string>
     <string>Conan The Barbarian</string>
+    <string>D</string>
+    <string>D_</string>
     <string>Dark Cloud 2 - Dark Chronicle</string>
     <string>Dark Cloud 2 - Peace</string>
     <string>Dark Cloud 2 - Shop Theme</string>
@@ -47,13 +51,19 @@
     <string>Dragon Ball Z - Battle Theme1</string>
     <string>Dragon Ball Z - Opening</string>
     <string>Dragon Ball Z - Super Butouden 2</string>
+    <string>E</string>
     <string>Eagles - Best Of My Love</string>
     <string>Everybody loves somebody sometime 1</string>
     <string>EVO - Boss Theme</string>
+    <string>F</string>
+    <string>F_</string>
     <string>Faure - Requiem</string>
     <string>Final Fantasy - Village</string>
     <string>Fire Emblem 3 - Theme</string>
+    <string>G</string>
+    <string>G_</string>
     <string>Higelin Jacques - Champagne</string>
+    <string>jinglebells</string>
     <string>kakariko</string>
     <string>ladolcevita</string>
     <string>Leo Ferre - Avec le temps</string>
