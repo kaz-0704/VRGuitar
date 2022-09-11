@@ -17,6 +17,7 @@ namespace VRGuitar
         private MPTKEvent NotePlaying;
         public Chords chord;
         public RightHandRecorder rightRecorder;
+        private float volume;
 
         // Start is called before the first frame update
         void Start()
@@ -41,46 +42,144 @@ namespace VRGuitar
             }
         }
 
-        public void PlayChord()
-        {
-            midiFilePlayer.MPTK_Stop();
-            if (chord == Chords.A) { midiFilePlayer.MPTK_MidiName = "A"; }
-            else if (chord == Chords.B) { midiFilePlayer.MPTK_MidiName = "B"; }
-            else if (chord == Chords.C) { midiFilePlayer.MPTK_MidiName = "C"; }
-            else if (chord == Chords.D) { midiFilePlayer.MPTK_MidiName = "D"; }
-            else if (chord == Chords.E) { midiFilePlayer.MPTK_MidiName = "E"; }
-            else if (chord == Chords.F) { midiFilePlayer.MPTK_MidiName = "F"; }
-            else if (chord == Chords.G) { midiFilePlayer.MPTK_MidiName = "G"; }
-            Debug.Log(midiFilePlayer.MPTK_MidiName);
-
-            //右手の速度を取得してボリュームを変更
-            //if (rightRecorder.RightHandAngularVelocityMagnitude > 10.0f)
-            //{
-            //    midiFilePlayer.MPTK_ChannelVolumeSet(0, 1.0f);
-            //    Debug.Log("Set Volume: " + 1.0f);
-            //}
-            //else
-            //{
-            //    midiFilePlayer.MPTK_ChannelVolumeSet(0, 0.5f);
-            //    Debug.Log("Set Volume: " + 0.5f);
-            //}
-
-            midiFilePlayer.MPTK_Play();
-        }
-
         //public void PlayChord()
         //{
-        //    NotePlaying = new MPTKEvent()
-        //    {
-        //        Command = MPTKCommand.NoteOn,
-        //        Value = 60,
-        //        Channel = 0,
-        //        Duration = 1000,
-        //        Velocity = 100,
-        //        Delay = 0,
-        //    };
-        //    midiStreamPlayer.MPTK_PlayEvent(NotePlaying);
+        //    midiFilePlayer.MPTK_Stop();
+        //    if (chord == Chords.A) { midiFilePlayer.MPTK_MidiName = "A"; }
+        //    else if (chord == Chords.B) { midiFilePlayer.MPTK_MidiName = "B"; }
+        //    else if (chord == Chords.C) { midiFilePlayer.MPTK_MidiName = "C"; }
+        //    else if (chord == Chords.D) { midiFilePlayer.MPTK_MidiName = "D"; }
+        //    else if (chord == Chords.E) { midiFilePlayer.MPTK_MidiName = "E"; }
+        //    else if (chord == Chords.F) { midiFilePlayer.MPTK_MidiName = "F"; }
+        //    else if (chord == Chords.G) { midiFilePlayer.MPTK_MidiName = "G"; }
+        //    Debug.Log(midiFilePlayer.MPTK_MidiName);
+
+        //    //右手の速度を取得してボリュームを変更
+        //    //if (rightRecorder.RightHandAngularVelocityMagnitude > 10.0f)
+        //    //{
+        //    //    midiFilePlayer.MPTK_ChannelVolumeSet(0, 1.0f);
+        //    //    Debug.Log("Set Volume: " + 1.0f);
+        //    //}
+        //    //else
+        //    //{
+        //    //    midiFilePlayer.MPTK_ChannelVolumeSet(0, 0.5f);
+        //    //    Debug.Log("Set Volume: " + 0.5f);
+        //    //}
+
+        //    midiFilePlayer.MPTK_Play();
         //}
+
+        public void PlayChord()
+        {
+            float volumef = rightRecorder.RightHandAngularVelocity.x * 10f;
+            int volume = Mathf.RoundToInt(volumef);
+            if (chord == Chords.C)
+            {
+                NotePlaying = new MPTKEvent()
+                {
+                    Command = MPTKCommand.NoteOn,
+                    Value = 60,
+                    Channel = 0,
+                    Duration = 1000,
+                    Velocity = volume,
+                    Delay = 0,
+                };
+                midiStreamPlayer.MPTK_PlayEvent(NotePlaying);
+                NotePlaying = new MPTKEvent()
+                {
+                    Command = MPTKCommand.NoteOn,
+                    Value = 64,
+                    Channel = 0,
+                    Duration = 1000,
+                    Velocity = volume,
+                    Delay = 0,
+                };
+                midiStreamPlayer.MPTK_PlayEvent(NotePlaying);
+                NotePlaying = new MPTKEvent()
+                {
+                    Command = MPTKCommand.NoteOn,
+                    Value = 67,
+                    Channel = 0,
+                    Duration = 1000,
+                    Velocity = volume,
+                    Delay = 0,
+                };
+                midiStreamPlayer.MPTK_PlayEvent(NotePlaying);
+                NotePlaying = new MPTKEvent()
+                {
+                    Command = MPTKCommand.NoteOn,
+                    Value = 72,
+                    Channel = 0,
+                    Duration = 1000,
+                    Velocity = volume,
+                    Delay = 0,
+                };
+                midiStreamPlayer.MPTK_PlayEvent(NotePlaying);
+                NotePlaying = new MPTKEvent()
+                {
+                    Command = MPTKCommand.NoteOn,
+                    Value = 76,
+                    Channel = 0,
+                    Duration = 1000,
+                    Velocity = volume,
+                    Delay = 0,
+                };
+                midiStreamPlayer.MPTK_PlayEvent(NotePlaying);
+            }
+            else if (chord == Chords.D)
+            {
+                NotePlaying = new MPTKEvent()
+                {
+                    Command = MPTKCommand.NoteOn,
+                    Value = 62,
+                    Channel = 0,
+                    Duration = 1000,
+                    Velocity = volume,
+                    Delay = 0,
+                };
+                midiStreamPlayer.MPTK_PlayEvent(NotePlaying);
+                NotePlaying = new MPTKEvent()
+                {
+                    Command = MPTKCommand.NoteOn,
+                    Value = 66,
+                    Channel = 0,
+                    Duration = 1000,
+                    Velocity = volume,
+                    Delay = 0,
+                };
+                midiStreamPlayer.MPTK_PlayEvent(NotePlaying);
+                NotePlaying = new MPTKEvent()
+                {
+                    Command = MPTKCommand.NoteOn,
+                    Value = 69,
+                    Channel = 0,
+                    Duration = 1000,
+                    Velocity = volume,
+                    Delay = 0,
+                };
+                midiStreamPlayer.MPTK_PlayEvent(NotePlaying);
+                NotePlaying = new MPTKEvent()
+                {
+                    Command = MPTKCommand.NoteOn,
+                    Value = 74,
+                    Channel = 0,
+                    Duration = 1000,
+                    Velocity = volume,
+                    Delay = 0,
+                };
+                midiStreamPlayer.MPTK_PlayEvent(NotePlaying);
+                NotePlaying = new MPTKEvent()
+                {
+                    Command = MPTKCommand.NoteOn,
+                    Value = 78,
+                    Channel = 0,
+                    Duration = 1000,
+                    Velocity = volume,
+                    Delay = 0,
+                };
+                midiStreamPlayer.MPTK_PlayEvent(NotePlaying);
+            }
+        }
     }
 }
 

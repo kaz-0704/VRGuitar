@@ -5,7 +5,7 @@ using Valve.VR;
 
 namespace VRGuitar
 {
-    public class ChordCollider : MonoBehaviour
+    public class G_Collider : MonoBehaviour
     {
         public StringCollider stringCollider;
         public Chords chord;
