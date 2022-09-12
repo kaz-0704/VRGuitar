@@ -24,7 +24,7 @@ namespace VRGuitar
 
         void OnTriggerEnter(Collider other)    //弦とオブジェクトが重なったときに
         {
-            if (other.gameObject.name == "finger_ring_2_l")
+            if (other.gameObject.name == "LeftHandCollider")
             {
                 Debug.Log("Chord: F");
                 stringCollider.chord = Chords.F;

@@ -8,27 +8,26 @@ namespace VRGuitar
     public class A_Collider : MonoBehaviour
     {
         public StringCollider stringCollider;
-        public Chords chord;
-        public SteamVR_Input_Sources lefthand;
+        
 
         // Start is called before the first frame update
         void Start()
         {
-            stringCollider.chord = Chords.C;
+
         }
 
         // Update is called once per frame
         void Update()
         {
-            if (SteamVR_Input.GetStateDown("X", lefthand))
+
+        }
+
+        void OnTriggerEnter(Collider other)    //弦とオブジェクトが重なったときに
+        {
+            if (other.gameObject.name == "LeftHandCollider")
             {
-                Debug.Log("Pushing X");
-                stringCollider.chord = Chords.D;
-            }
-            else if (SteamVR_Input.GetStateDown("Y", lefthand))
-            {
-                Debug.Log("Pushing Y");
-                stringCollider.chord = Chords.E;
+                Debug.Log("Chord: A#");
+                stringCollider.chord = Chords.A_;
             }
         }
     }

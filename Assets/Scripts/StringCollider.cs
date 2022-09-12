@@ -17,7 +17,6 @@ namespace VRGuitar
         private MPTKEvent NotePlaying;
         public Chords chord;
         public RightHandRecorder rightRecorder;
-        private float volume;
 
         // Start is called before the first frame update
         void Start()
@@ -35,7 +34,7 @@ namespace VRGuitar
         {
             if (other.gameObject.name == "finger_ring_2_r")
             {
-                Debug.Log("String: " + other.gameObject.name);
+                //Debug.Log("String: " + other.gameObject.name);
 
                 //音を鳴らす
                 PlayChord();
@@ -53,72 +52,19 @@ namespace VRGuitar
         //    else if (chord == Chords.F) { midiFilePlayer.MPTK_MidiName = "F"; }
         //    else if (chord == Chords.G) { midiFilePlayer.MPTK_MidiName = "G"; }
         //    Debug.Log(midiFilePlayer.MPTK_MidiName);
-
-        //    //右手の速度を取得してボリュームを変更
-        //    //if (rightRecorder.RightHandAngularVelocityMagnitude > 10.0f)
-        //    //{
-        //    //    midiFilePlayer.MPTK_ChannelVolumeSet(0, 1.0f);
-        //    //    Debug.Log("Set Volume: " + 1.0f);
-        //    //}
-        //    //else
-        //    //{
-        //    //    midiFilePlayer.MPTK_ChannelVolumeSet(0, 0.5f);
-        //    //    Debug.Log("Set Volume: " + 0.5f);
-        //    //}
-
         //    midiFilePlayer.MPTK_Play();
         //}
 
-        public void PlayChord()
+        //MIDIStreamPlayerのセット　引数：（コードの根音, ボリューム）
+        private void PlayMIDI(int firstvalue, int volume)
         {
-            float volumef = rightRecorder.RightHandAngularVelocity.x * 10f;
-            int volume = Mathf.RoundToInt(volumef);
-            if (chord == Chords.C)
+            int[] array = new int[] { firstvalue, firstvalue + 4, firstvalue + 7, firstvalue + 12, firstvalue + 16 };
+            for (int i = 0; i < 5; i++)
             {
                 NotePlaying = new MPTKEvent()
                 {
                     Command = MPTKCommand.NoteOn,
-                    Value = 60,
-                    Channel = 0,
-                    Duration = 1000,
-                    Velocity = volume,
-                    Delay = 0,
-                };
-                midiStreamPlayer.MPTK_PlayEvent(NotePlaying);
-                NotePlaying = new MPTKEvent()
-                {
-                    Command = MPTKCommand.NoteOn,
-                    Value = 64,
-                    Channel = 0,
-                    Duration = 1000,
-                    Velocity = volume,
-                    Delay = 0,
-                };
-                midiStreamPlayer.MPTK_PlayEvent(NotePlaying);
-                NotePlaying = new MPTKEvent()
-                {
-                    Command = MPTKCommand.NoteOn,
-                    Value = 67,
-                    Channel = 0,
-                    Duration = 1000,
-                    Velocity = volume,
-                    Delay = 0,
-                };
-                midiStreamPlayer.MPTK_PlayEvent(NotePlaying);
-                NotePlaying = new MPTKEvent()
-                {
-                    Command = MPTKCommand.NoteOn,
-                    Value = 72,
-                    Channel = 0,
-                    Duration = 1000,
-                    Velocity = volume,
-                    Delay = 0,
-                };
-                midiStreamPlayer.MPTK_PlayEvent(NotePlaying);
-                NotePlaying = new MPTKEvent()
-                {
-                    Command = MPTKCommand.NoteOn,
-                    Value = 76,
+                    Value = array[i],
                     Channel = 0,
                     Duration = 1000,
                     Velocity = volume,
@@ -126,58 +72,64 @@ namespace VRGuitar
                 };
                 midiStreamPlayer.MPTK_PlayEvent(NotePlaying);
             }
-            else if (chord == Chords.D)
+        }
+
+        // コードを鳴らす関数
+        public void PlayChord()
+        {
+            float volumef = rightRecorder.RightHandAngularVelocity.x * 10f;
+            int volume = Mathf.Abs(Mathf.RoundToInt(volumef));
+            //Debug.Log("Volume: " + volume);
+            //chord = Chords.C;
+            switch (chord)
             {
-                NotePlaying = new MPTKEvent()
-                {
-                    Command = MPTKCommand.NoteOn,
-                    Value = 62,
-                    Channel = 0,
-                    Duration = 1000,
-                    Velocity = volume,
-                    Delay = 0,
-                };
-                midiStreamPlayer.MPTK_PlayEvent(NotePlaying);
-                NotePlaying = new MPTKEvent()
-                {
-                    Command = MPTKCommand.NoteOn,
-                    Value = 66,
-                    Channel = 0,
-                    Duration = 1000,
-                    Velocity = volume,
-                    Delay = 0,
-                };
-                midiStreamPlayer.MPTK_PlayEvent(NotePlaying);
-                NotePlaying = new MPTKEvent()
-                {
-                    Command = MPTKCommand.NoteOn,
-                    Value = 69,
-                    Channel = 0,
-                    Duration = 1000,
-                    Velocity = volume,
-                    Delay = 0,
-                };
-                midiStreamPlayer.MPTK_PlayEvent(NotePlaying);
-                NotePlaying = new MPTKEvent()
-                {
-                    Command = MPTKCommand.NoteOn,
-                    Value = 74,
-                    Channel = 0,
-                    Duration = 1000,
-                    Velocity = volume,
-                    Delay = 0,
-                };
-                midiStreamPlayer.MPTK_PlayEvent(NotePlaying);
-                NotePlaying = new MPTKEvent()
-                {
-                    Command = MPTKCommand.NoteOn,
-                    Value = 78,
-                    Channel = 0,
-                    Duration = 1000,
-                    Velocity = volume,
-                    Delay = 0,
-                };
-                midiStreamPlayer.MPTK_PlayEvent(NotePlaying);
+                case Chords.C:
+                    PlayMIDI(48, volume);
+                    break;
+
+                case Chords.C_:
+                    PlayMIDI(49, volume);
+                    break;
+
+                case Chords.D:
+                    PlayMIDI(50, volume);
+                    break;
+
+                case Chords.D_:
+                    PlayMIDI(51, volume);
+                    break;
+
+                case Chords.E:
+                    PlayMIDI(52, volume);
+                    break;
+
+                case Chords.F:
+                    PlayMIDI(53, volume);
+                    break;
+
+                case Chords.F_:
+                    PlayMIDI(54, volume);
+                    break;
+
+                case Chords.G:
+                    PlayMIDI(55, volume);
+                    break;
+
+                case Chords.G_:
+                    PlayMIDI(56, volume);
+                    break;
+
+                case Chords.A:
+                    PlayMIDI(57, volume);
+                    break;
+
+                case Chords.A_:
+                    PlayMIDI(58, volume);
+                    break;
+
+                case Chords.B:
+                    PlayMIDI(59, volume);
+                    break;
             }
         }
     }
