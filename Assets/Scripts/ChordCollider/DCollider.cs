@@ -8,6 +8,7 @@ namespace VRGuitar
     public class DCollider : MonoBehaviour
     {
         public StringCollider stringCollider;
+        Setting setting = new Setting();
 
         // Start is called before the first frame update
         void Start()
@@ -23,7 +24,7 @@ namespace VRGuitar
 
         void OnTriggerEnter(Collider other)    //弦とオブジェクトが重なったときに
         {
-            if (other.gameObject.name == "LeftHandCollider")
+            if (other.gameObject.name == setting.chordCollisionObject)
             {
                 Debug.Log("Chord: D");
                 stringCollider.chord = Chords.D;

@@ -8,7 +8,7 @@ namespace VRGuitar
     public class FCollider : MonoBehaviour
     {
         public StringCollider stringCollider;
-        public SteamVR_Input_Sources lefthand;
+        Setting setting = new Setting();
 
         // Start is called before the first frame update
         void Start()
@@ -24,7 +24,7 @@ namespace VRGuitar
 
         void OnTriggerEnter(Collider other)    //弦とオブジェクトが重なったときに
         {
-            if (other.gameObject.name == "LeftHandCollider")
+            if (other.gameObject.name == setting.chordCollisionObject)
             {
                 Debug.Log("Chord: F");
                 stringCollider.chord = Chords.F;

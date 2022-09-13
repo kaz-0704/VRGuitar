@@ -8,6 +8,7 @@ namespace VRGuitar
     public class C_Collider : MonoBehaviour
     {
         public StringCollider stringCollider;
+        Setting setting = new Setting();
         private LeftHandRecorder leftRecorder;
         public float distance;
 
@@ -27,7 +28,7 @@ namespace VRGuitar
 
         void OnTriggerEnter(Collider other)    //弦とオブジェクトが重なったときに
         {
-            if (other.gameObject.name == "LeftHandCollider")
+            if (other.gameObject.name == setting.chordCollisionObject)
             {
                 Debug.Log("Chord: C#");
                 stringCollider.chord = Chords.C_;
