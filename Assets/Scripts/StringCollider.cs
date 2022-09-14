@@ -10,6 +10,7 @@ namespace VRGuitar
         public MidiFilePlayer midiFilePlayer;
         public MidiStreamPlayer midiStreamPlayer;
         public MidiFileLoader MidiLoader;
+        Setting setting = new Setting();
         //public MidiExternalPlayer midiExternalPlayer;
         //public MidiInReader midiInReader;
         //public MidiListPlayer midiListPlayer;
@@ -32,9 +33,9 @@ namespace VRGuitar
 
         void OnTriggerEnter(Collider other)    //弦とオブジェクトが重なったときに
         {
-            if (other.gameObject.name == "finger_ring_2_r")
+            if (other.gameObject.name == setting.playCollisionObject)
             {
-                //Debug.Log("String: " + other.gameObject.name);
+                Debug.Log("String: " + other.gameObject.name);
 
                 //音を鳴らす
                 PlayChord();
