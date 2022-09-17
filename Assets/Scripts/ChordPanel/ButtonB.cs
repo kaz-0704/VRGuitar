@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace VRGuitar
 {
-    public class ButtonC : MonoBehaviour
+    public class ButtonB : MonoBehaviour
     {
         public StringCollider stringCollider;
         Setting setting = new Setting();
@@ -26,7 +26,7 @@ namespace VRGuitar
             if (other.gameObject.name == setting.panelCollisionObject)
             {
                 Debug.Log(other.gameObject.name);
-                stringCollider.chord = Chords.C;
+                stringCollider.chord = Chords.B;
                 //OnClick();
             }
         }
