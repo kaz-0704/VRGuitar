@@ -5891,7 +5891,7 @@ GameObject:
   - component: {fileID: 1731066721}
   - component: {fileID: 1731066720}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: ChordCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
