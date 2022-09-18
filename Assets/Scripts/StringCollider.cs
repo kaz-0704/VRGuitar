@@ -35,11 +35,10 @@ namespace VRGuitar
         {
             if (other.gameObject.name == setting.playCollisionObject)
             {
-                Debug.Log("String: " + other.gameObject.name);
-
                 //‰¹‚ð–Â‚ç‚·
                 PlayChord();
             }
+            Debug.Log("String: " + other.gameObject.name);
         }
 
         //public void PlayChord()
