@@ -34,6 +34,7 @@ namespace VRGuitar
         void OnTriggerEnter(Collider other)    //弦とオブジェクトが重なったときに
         {
             if (other.gameObject.name == setting.playCollisionObject)
+            //if (other.gameObject.name == setting.playCollisionObject | other.gameObject.name == "finger_ring_1_r")
             {
                 //音を鳴らす
                 PlayChord();

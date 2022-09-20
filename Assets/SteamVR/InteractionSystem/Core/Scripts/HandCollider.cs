@@ -256,7 +256,6 @@ namespace Valve.VR.InteractionSystem
         private float lastCollisionHapticsTime;
         private void OnCollisionEnter(Collision collision)
         {
-            Debug.Log("test");
             bool touchingDynamic = false;
             if (collision.rigidbody != null)
             {
@@ -279,7 +278,6 @@ namespace Valve.VR.InteractionSystem
 
                 hand.hand.TriggerHapticPulse(length, 100, intensity);
             }
-            Debug.Log("test2");
         }
 
     }
