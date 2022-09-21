@@ -7,14 +7,14 @@ namespace VRGuitar
 {
     public class ButtonF : MonoBehaviour
     {
-        public StringCollider stringCollider;
+        
         Setting setting = new Setting();
-        private Button button;
+        public ButtonManager buttonManager;
 
         // Start is called before the first frame update
         void Start()
         {
-            button = GetComponent<Button>();
+            
         }
 
         // Update is called once per frame
@@ -27,9 +27,7 @@ namespace VRGuitar
         {
             if (other.gameObject.name == setting.panelCollisionObject)
             {
-                button.image.color = Color.green;
-                stringCollider.chord = Chords.F;
-                //OnClick();
+                buttonManager.SetChord(Chords.F);
             }
         }
 
@@ -37,8 +35,7 @@ namespace VRGuitar
         {
             if (other.gameObject.name == setting.panelCollisionObject)
             {
-                button.image.color = Color.white;
-                stringCollider.chord = Chords.F;
+                buttonManager.SetChord(Chords.F);
             }
         }
     }

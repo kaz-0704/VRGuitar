@@ -10,7 +10,7 @@ namespace VRGuitar
     {
         public MidiStreamPlayer midiStreamPlayer;
         private MPTKEvent NotePlaying;
-        public int bpm = 60;
+        public float bpm = 60f;
 
         private float timeOut;
         private float timeElapsed = 0;
@@ -68,12 +68,10 @@ namespace VRGuitar
             if (metronome)
             {
                 metronome = false;
-                Debug.Log("Metronome Off");
             }
             else
             {
                 metronome = true;
-                Debug.Log("Metronome On");
             }
         }
     }

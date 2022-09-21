@@ -822,7 +822,7 @@ RectTransform:
   m_Children:
   - {fileID: 1491245349}
   m_Father: {fileID: 2123053190}
-  m_RootOrder: 6
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -936,7 +936,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19a5e5b1016c941429d1356af796f933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stringCollider: {fileID: 906072547}
+  buttonManager: {fileID: 2123053195}
 --- !u!54 &292525183
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1811,14 +1811,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 493180000}
-  m_LocalRotation: {x: 0.019822696, y: 0.9614881, z: -0.07206045, w: 0.26449025}
-  m_LocalPosition: {x: -0.435, y: 0.844, z: 0.735}
+  m_LocalRotation: {x: 0.095426925, y: -0.21753077, z: 0.020932589, w: 0.9711519}
+  m_LocalPosition: {x: 0.372, y: 0.803, z: -0.305}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 8.572, y: 149.238, z: 0}
+  m_LocalEulerAnglesHint: {x: 11.213, y: -25.256, z: -0.05}
 --- !u!1 &535797689
 GameObject:
   m_ObjectHideFlags: 0
@@ -1952,7 +1952,7 @@ RectTransform:
   m_Children:
   - {fileID: 1938874754}
   m_Father: {fileID: 2123053190}
-  m_RootOrder: 3
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2066,7 +2066,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9284eec4335d3c646b909cf5570eaf33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stringCollider: {fileID: 906072547}
+  buttonManager: {fileID: 2123053195}
 --- !u!54 &590131211
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2292,7 +2292,7 @@ RectTransform:
   m_Children:
   - {fileID: 1228777817}
   m_Father: {fileID: 2123053190}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2422,7 +2422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf303a00ab7a97e4da4fb93ce8ce7132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stringCollider: {fileID: 906072547}
+  buttonManager: {fileID: 2123053195}
 --- !u!1 &664337657
 GameObject:
   m_ObjectHideFlags: 0
@@ -3764,7 +3764,7 @@ RectTransform:
   m_Children:
   - {fileID: 56053384}
   m_Father: {fileID: 2123053190}
-  m_RootOrder: 2
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3878,7 +3878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4276aae5d73f3247909a3809b660a01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stringCollider: {fileID: 906072547}
+  buttonManager: {fileID: 2123053195}
 --- !u!54 &1109763539
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3931,7 +3931,7 @@ RectTransform:
   m_Children:
   - {fileID: 1082836738}
   m_Father: {fileID: 2123053190}
-  m_RootOrder: 5
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4045,7 +4045,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0247321f89606814fbf9aedce789be08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stringCollider: {fileID: 906072547}
+  buttonManager: {fileID: 2123053195}
 --- !u!54 &1148355547
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5643,7 +5643,7 @@ RectTransform:
   m_Children:
   - {fileID: 2017818651}
   m_Father: {fileID: 2123053190}
-  m_RootOrder: 10
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5757,7 +5757,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce122a7305725d143b08fd080035326d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stringCollider: {fileID: 906072547}
+  buttonManager: {fileID: 2123053195}
 --- !u!54 &1628957696
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5910,7 +5910,7 @@ RectTransform:
   m_Children:
   - {fileID: 135600584}
   m_Father: {fileID: 2123053190}
-  m_RootOrder: 4
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6024,7 +6024,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4a5178bc47fb2f4d92658236349e894, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stringCollider: {fileID: 906072547}
+  buttonManager: {fileID: 2123053195}
 --- !u!54 &1697939696
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6077,7 +6077,7 @@ RectTransform:
   m_Children:
   - {fileID: 441016868}
   m_Father: {fileID: 2123053190}
-  m_RootOrder: 9
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6191,7 +6191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a688f304a1b58e429461771cce9a030, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stringCollider: {fileID: 906072547}
+  buttonManager: {fileID: 2123053195}
 --- !u!54 &1712590343
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6439,7 +6439,7 @@ RectTransform:
   m_Children:
   - {fileID: 893529969}
   m_Father: {fileID: 2123053190}
-  m_RootOrder: 8
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6553,7 +6553,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd1f505b71465594d82aa596c5dc0bff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stringCollider: {fileID: 906072547}
+  buttonManager: {fileID: 2123053195}
 --- !u!54 &1809076745
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6647,7 +6647,7 @@ RectTransform:
   m_Children:
   - {fileID: 919455969}
   m_Father: {fileID: 2123053190}
-  m_RootOrder: 1
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6761,7 +6761,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33eb6c57c6ba1fc42801129e0c62c9b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stringCollider: {fileID: 906072547}
+  buttonManager: {fileID: 2123053195}
 --- !u!54 &1881662132
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7427,7 +7427,7 @@ RectTransform:
   m_Children:
   - {fileID: 987594018}
   m_Father: {fileID: 2123053190}
-  m_RootOrder: 7
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7541,7 +7541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3f02ce2462deeb4fa56a9735d3238f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stringCollider: {fileID: 906072547}
+  buttonManager: {fileID: 2123053195}
 --- !u!54 &2088702075
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7571,6 +7571,7 @@ GameObject:
   - component: {fileID: 2123053191}
   - component: {fileID: 2123053193}
   - component: {fileID: 2123053194}
+  - component: {fileID: 2123053195}
   m_Layer: 0
   m_Name: ChordPanel
   m_TagString: Untagged
@@ -7590,6 +7591,9 @@ RectTransform:
   m_LocalScale: {x: 0.0100049265, y: 0.0100049265, z: 0.0100049265}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1712590337}
+  - {fileID: 1628957690}
+  - {fileID: 2135977509}
   - {fileID: 651787895}
   - {fileID: 1881662126}
   - {fileID: 1109763533}
@@ -7599,9 +7603,6 @@ RectTransform:
   - {fileID: 292525177}
   - {fileID: 2088702069}
   - {fileID: 1809076739}
-  - {fileID: 1712590337}
-  - {fileID: 1628957690}
-  - {fileID: 2135977509}
   - {fileID: 1256317706}
   m_Father: {fileID: 1731066723}
   m_RootOrder: 0
@@ -7729,6 +7730,19 @@ MonoBehaviour:
   engaged: 0
   buttonDown: 0
   buttonUp: 0
+--- !u!114 &2123053195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123053189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 132cb1953cd9b424da4ff3d972d7511f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stringCollider: {fileID: 906072547}
 --- !u!1 &2135977508
 GameObject:
   m_ObjectHideFlags: 0
@@ -7765,7 +7779,7 @@ RectTransform:
   m_Children:
   - {fileID: 1076322393}
   m_Father: {fileID: 2123053190}
-  m_RootOrder: 11
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7879,7 +7893,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e30878bb67318344d81f984e18d71242, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stringCollider: {fileID: 906072547}
+  buttonManager: {fileID: 2123053195}
 --- !u!54 &2135977515
 Rigidbody:
   m_ObjectHideFlags: 0

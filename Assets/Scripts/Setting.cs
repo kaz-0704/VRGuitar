@@ -14,5 +14,8 @@ namespace VRGuitar
 
         // The name of object specifying chord with panel.
         public string panelCollisionObject = "finger_index_2_r";
+
+        // Number of chords
+        public int numberOfChords = 12;
     }
 }
