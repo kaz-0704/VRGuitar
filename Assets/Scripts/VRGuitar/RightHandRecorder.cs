@@ -31,8 +31,9 @@ namespace VRGuitar
             RightHandVelocity = right_tracker.GetLastVelocity(SteamVR_Input_Sources.RightHand);
             RightHandAngularVelocity = right_tracker.GetAngularVelocity(SteamVR_Input_Sources.RightHand);
             RightHandAngularVelocityMagnitude = CalcMagnitude(RightHandAngularVelocity);
+            //right_tracker.GetAngularVelocity(SteamVR_Input_Sources.RightHand);
 
-            //Debug.Log(RightHandAngularVelocityMagnitude);
+            Debug.Log(RightHandAngularVelocity);
         }
 
         float CalcMagnitude(Vector3 vector)

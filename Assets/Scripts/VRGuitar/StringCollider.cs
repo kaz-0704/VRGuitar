@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using MidiPlayerTK;
+using Valve.VR;
 
 namespace VRGuitar
 {
@@ -19,6 +20,8 @@ namespace VRGuitar
         public Chords chord;
         public RightHandRecorder rightRecorder;
 
+        private SteamVR_Action_Pose right_tracker = SteamVR_Actions.default_Pose;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -33,13 +36,14 @@ namespace VRGuitar
 
         void OnTriggerEnter(Collider other)    //弦とオブジェクトが重なったときに
         {
-            if (other.gameObject.name == setting.playCollisionObject)
-            //if (other.gameObject.name == setting.playCollisionObject | other.gameObject.name == "finger_ring_1_r")
+            //if (other.gameObject.name == setting.playCollisionObject)
+            if (other.gameObject.name == setting.playCollisionObject | other.gameObject.name == "finger_ring_1_r")
             {
+                Debug.Log("Tatched");
                 //音を鳴らす
                 PlayChord();
             }
-            Debug.Log("String: " + other.gameObject.name);
+            //Debug.Log("String: " + other.gameObject.name);
         }
 
         //public void PlayChord()
@@ -78,9 +82,11 @@ namespace VRGuitar
         // コードを鳴らす関数
         public void PlayChord()
         {
-            float volumef = rightRecorder.RightHandAngularVelocity.x * 10f;
-            int volume = Mathf.Abs(Mathf.RoundToInt(volumef));
-            //Debug.Log("Volume: " + volume);
+            //float volumef = rightRecorder.RightHandAngularVelocity.x * 10f;
+            //float volumef = right_tracker.GetAngularVelocity(SteamVR_Input_Sources.RightHand).x * 10f;
+            //int volume = Mathf.Abs(Mathf.RoundToInt(volumef));
+            int volume = 80;
+            Debug.Log("Volume: " + volume);
             //chord = Chords.C;
             switch (chord)
             {
