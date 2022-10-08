@@ -36,8 +36,8 @@ namespace VRGuitar
 
         void OnTriggerEnter(Collider other)    //弦とオブジェクトが重なったときに
         {
-            //if (other.gameObject.name == setting.playCollisionObject)
-            if (other.gameObject.name == setting.playCollisionObject | other.gameObject.name == "finger_ring_1_r")
+            if (other.gameObject.name == setting.playCollisionObject)
+            //if (other.gameObject.name == setting.playCollisionObject | other.gameObject.name == "thumb_2_r")
             {
                 Debug.Log("Tatched");
                 //音を鳴らす

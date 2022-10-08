@@ -5,7 +5,7 @@
       "app_key": "application.generated.unity.vrguitar.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "C:\\Users\\KazIwa\\Unity\\VRGuitar\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "action_manifest_path": "C:\\Users\\xr\\Documents\\Oiwa\\VRGuitar\\Assets\\StreamingAssets\\SteamVR\\actions.json",
       "strings": {
         "en_us": {
           "name": "VRGuitar [Testing]"
