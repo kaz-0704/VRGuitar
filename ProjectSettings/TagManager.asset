@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - "\u30B3\u30FC\u30C9\u30DC\u30BF\u30F3"
+  - "\u30D8\u30EB\u30D7\u8868\u793A\u5BFE\u8C61"
   layers:
   - Default
   - TransparentFX
@@ -11,8 +13,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Hands
+  - Interactive
   - 
   - 
   - 

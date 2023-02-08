@@ -12,6 +12,8 @@
   <IndexSelectedSF>0</IndexSelectedSF>
   <MidiFiles>
     <string>@ All Rights Reserved for these Midi Files</string>
+    <string>ageha-chou</string>
+    <string>ainoshirushi</string>
     <string>Albinoni - Adagio</string>
     <string>All Night Long</string>
     <string>Animal Crossing</string>
@@ -36,6 +38,7 @@
     <string>Buddy Guy - Midnight Train</string>
     <string>C</string>
     <string>C_</string>
+    <string>cherry</string>
     <string>Christopher Cross - Sailing</string>
     <string>Conan The Barbarian</string>
     <string>D</string>
@@ -60,8 +63,10 @@
     <string>Faure - Requiem</string>
     <string>Final Fantasy - Village</string>
     <string>Fire Emblem 3 - Theme</string>
+    <string>first-love</string>
     <string>G</string>
     <string>G_</string>
+    <string>hanabi</string>
     <string>Higelin Jacques - Champagne</string>
     <string>jinglebells</string>
     <string>kakariko</string>
