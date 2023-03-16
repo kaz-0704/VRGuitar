@@ -51,7 +51,6 @@ namespace VRGuitar
         public GameObject radarChart;
         public GameObject settingMenu;
 
-        public AdviceManager adviceManager;
         public GameObject advicePanel;
 
         private State state;
@@ -89,6 +88,7 @@ namespace VRGuitar
             evalMenu.SetActive(true);
             musicSelectMenu.SetActive(false);
             resultPage.SetActive(false);
+            advicePanel.SetActive(false);
             settingMenu.SetActive(false);
             state = State.EvalMenu;
         }
@@ -125,7 +125,6 @@ namespace VRGuitar
 
         public void OpenRadarChart()
         {
-            //adviceManager.InitializeAdvicePanel();
             radarChart.SetActive(true);
             advicePanel.SetActive(true);
         }

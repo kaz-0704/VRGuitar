@@ -5,167 +5,164 @@ using TMPro;
 
 namespace VRGuitar
 {
+    enum AdvicePanelState
+    {
+        ScoreList,
+        RythmPage,
+        zRotationPage,
+        yRotationPage,
+        ForearmPage
+    }
+
     /// <summary>
     /// アドバイスの表示を管理する
     /// </summary>
     public class AdviceManager : MonoBehaviour
     {
-        [SerializeField] private GameObject advicePanel1;
-        [SerializeField] private GameObject advicePanel2;
-        [SerializeField] private GameObject advicePanel3;
-        [SerializeField] private GameObject advicePanel4;
-        [SerializeField] private TextMeshProUGUI adviceText1;
-        [SerializeField] private TextMeshProUGUI adviceText2;
-        [SerializeField] private TextMeshProUGUI adviceText3;
-        [SerializeField] private TextMeshProUGUI adviceText4;
+        [SerializeField] private GameObject scoreList;
+        [SerializeField] private GameObject advicePanel;
+        [SerializeField] private TextMeshProUGUI rythmScoreText;
+        [SerializeField] private TextMeshProUGUI zScoreText;
+        [SerializeField] private TextMeshProUGUI yScoreText;
+        [SerializeField] private TextMeshProUGUI forearmScoreText;
+        [SerializeField] private TextMeshProUGUI scoreText;
+        [SerializeField] private TextMeshProUGUI adviceText;
 
         private string rythmAdvice;
         private string yRotationAdvice;
         private string zRotationAdvice;
-        private string ForearmAdvice;
+        private string forearmAdvice;
+        private AdvicePanelState state;
 
         public void InitializeAdvicePanel()
         {
-            advicePanel1.SetActive(false);
-            advicePanel2.SetActive(false);
-            advicePanel3.SetActive(false);
-            advicePanel4.SetActive(false);
+            scoreList.SetActive(true);
+            advicePanel.SetActive(false);
+            state = AdvicePanelState.ScoreList;
         }
 
-        public void OpenAdvice(int item)
+        public void OpenRythmAdvice()
         {
-            switch (item)
+            scoreList.SetActive(false);
+            advicePanel.SetActive(true);
+            scoreText.text = "リズム：" + rythmScoreText.text;
+            adviceText.text = rythmAdvice;
+            state = AdvicePanelState.RythmPage;
+        }
+
+        public void OpenzRotationAdvice()
+        {
+            scoreList.SetActive(false);
+            advicePanel.SetActive(true);
+            scoreText.text = "手首のひねり：" + zScoreText.text;
+            adviceText.text = zRotationAdvice;
+            state = AdvicePanelState.zRotationPage;
+        }
+
+        public void OpenyRotationAdvice()
+        {
+            scoreList.SetActive(false);
+            advicePanel.SetActive(true);
+            scoreText.text = "手首の振り：" + yScoreText.text;
+            adviceText.text = yRotationAdvice;
+            state = AdvicePanelState.yRotationPage;
+        }
+
+        public void OpenForearmAdvice()
+        {
+            scoreList.SetActive(false);
+            advicePanel.SetActive(true);
+            scoreText.text = "前腕の振り：" + forearmScoreText.text;
+            adviceText.text = forearmAdvice;
+            state = AdvicePanelState.ForearmPage;
+        }
+
+        public void Back()
+        {
+            if (state != AdvicePanelState.ScoreList)
             {
-                case 0:
-                    advicePanel1.SetActive(true);
-                    advicePanel2.SetActive(false);
-                    advicePanel3.SetActive(false);
-                    advicePanel4.SetActive(false);
-                    adviceText1.text = rythmAdvice;
-                    break;
-                case 1:
-                    advicePanel1.SetActive(false);
-                    advicePanel2.SetActive(true);
-                    advicePanel3.SetActive(false);
-                    advicePanel4.SetActive(false);
-                    adviceText2.text = zRotationAdvice;
-                    break;
-                case 2:
-                    advicePanel1.SetActive(false);
-                    advicePanel2.SetActive(false);
-                    advicePanel3.SetActive(true);
-                    advicePanel4.SetActive(false);
-                    adviceText3.text = yRotationAdvice;
-                    break;
-                case 3:
-                    advicePanel1.SetActive(false);
-                    advicePanel2.SetActive(false);
-                    advicePanel3.SetActive(false);
-                    advicePanel4.SetActive(true);
-                    adviceText4.text = ForearmAdvice;
-                    break;
+                scoreList.SetActive(true);
+                advicePanel.SetActive(false);
+                state = AdvicePanelState.ScoreList;
             }
         }
 
-        public void MakeAdvice(float rythmScore, float zScore, float yScore, float ForearmScore)
+        public void SetAdviceAndScore(float rythmScore, float zScore, float yScore, float forearmScore)
         {
             // リズムのアドバイスを決定
-            if (rythmScore < 1.5)
+            switch (rythmScore)
             {
-                rythmAdvice = "リズムへのアドバイス１\n" +
-                    "リズムが大きくずれてしまっています。まずは、ストロークパターンを覚えるところから始めましょう。";
-            }
-            else  if (rythmScore < 2.5)
-            {
-                rythmAdvice = "リズムへのアドバイス２\n" +
-                    "リズムが大きくずれてしまっています。空ピッキングを意識しながらストロークを行いましょう。";
-            }
-            else if (rythmScore < 3.5)
-            {
-                rythmAdvice = "リズムへのアドバイス３\n" +
-                    "リズムが少しずれてしまっています。空ピッキングを意識しながらストロークを行いましょう。";
-            }
-            else if (rythmScore < 4.5)
-            {
-                rythmAdvice = "リズムへのアドバイス４\n" +
-                    "惜しいですね。少しだけリズムがずれてしまっています。\n" +
-                    "メトロノームの音をちゃんと聞き、演奏の最後までｓのリズムを一定に保つように意識しましょう。";
-            }
-            else
-            {
-                rythmAdvice = "リズムへのアドバイス５\n" +
-                    "きれいなリズムで演奏ができています。その調子です！";
-            }
+                case 0:
+                    rythmScoreText.text = "悪い";
+                    rythmAdvice = "リズムが大きくずれてしまっています。\nまずは、ストロークパターンを覚えるところから始めましょう。";
+                    break;
 
-            // 手首のy軸回転のアドバイスを決定
-            if (yScore < 1.5)
-            {
-                yRotationAdvice = "手首y軸のアドバイス１";
-            }
-            else if (yScore < 2.5)
-            {
-                yRotationAdvice = "手首y軸のアドバイス２";
-            }
-            else if (yScore < 3.5)
-            {
-                yRotationAdvice = "手首y軸のアドバイス３";
-            }
-            else if (yScore < 4.5)
-            {
-                yRotationAdvice = "手首y軸のアドバイス４";
-            }
-            else
-            {
-                yRotationAdvice = "手首y軸のアドバイス５";
+                case 1:
+                    rythmScoreText.text = "普通";
+                    rythmAdvice = "リズムが少しずれてしまっています。\nメトロノームの音をしっかり聞きながら、\nリズムを合わせるようにしましょう。";
+                    break;
+
+                case 2:
+                    rythmScoreText.text = "良い";
+                    rythmAdvice = "一定のリズムでストロークができています。その調子です！";
+                    break;
             }
 
             // 手首のz軸回転のアドバイスを決定
-            if (zScore < 1.5)
+            switch (zScore)
             {
-                zRotationAdvice = "手首z軸のアドバイス１";
+                case 0:
+                    zScoreText.text = "悪い";
+                    zRotationAdvice = "手首のひねり方が良くありません。\n手首のひねりが大きすぎると、速いリズムに対応できなくなるので、大きくひねりすぎないようにしましょう。";
+                    break;
+
+                case 1:
+                    zScoreText.text = "普通";
+                    zRotationAdvice = "手首のひねりはまずまずですが、まだ改善できます。\n手首をひねって弦を弾くのではなく、手首の振りで弦を弾くことを意識しましょう。";
+                    break;
+
+                case 2:
+                    zScoreText.text = "良い";
+                    zRotationAdvice = "うまく手首のひねりを使えています。その調子です！";
+                    break;
             }
-            else if (zScore < 2.5)
+
+            // 手首のy軸回転のアドバイスを決定
+            switch (yScore)
             {
-                zRotationAdvice = "手首z軸のアドバイス２";
-            }
-            else if (zScore < 3.5)
-            {
-                zRotationAdvice = "手首z軸のアドバイス３";
-            }
-            else if (zScore < 4.5)
-            {
-                zRotationAdvice = "手首z軸のアドバイス４";
-            }
-            else
-            {
-                zRotationAdvice = "手首z軸のアドバイス５";
+                case 0:
+                    yScoreText.text = "悪い";
+                    yRotationAdvice = "手首がうまく振れていません。\n腕を振って弦を弾くのではなく、手首のスナップを使って弦を弾くようにしましょう。";
+                    break;
+
+                case 1:
+                    yScoreText.text = "普通";
+                    yRotationAdvice = "手首の振りはまずまずですが、まだ改善できます。\n手首のスナップを使って素早く振るようにしてみましょう。";
+                    break;
+
+                case 2:
+                    yScoreText.text = "良い";
+                    yRotationAdvice = "うまく手首を振れています。その調子です！";
+                    break;
             }
 
             // 前腕のアドバイスを決定
-            if (ForearmScore < 1.5)
+            switch (forearmScore)
             {
-                ForearmAdvice = "前腕のアドバイス１\n" +
-                    "前腕の振りが大きすぎます。腕はコンパクトに振るように心がけましょう。";
-            }
-            else if (ForearmScore < 2.5)
-            {
-                ForearmAdvice = "前腕のアドバイス２\n" +
-                    "前腕の振りが大きくなっています。腕はコンパクトに振るように心がけましょう。";
-            }
-            else if (ForearmScore < 3.5)
-            {
-                ForearmAdvice = "前腕のアドバイス３\n" +
-                    "前腕の振りが少し大きくなっています。腕はもう少しコンパクトに振るように心がけましょう。";
-            }
-            else if (ForearmScore < 4.5)
-            {
-                ForearmAdvice = "前腕のアドバイス４\n" +
-                    "前腕の振りが少し大きくなっています。腕はもう少しコンパクトに振るように心がけましょう。";
-            }
-            else
-            {
-                ForearmAdvice = "前腕のアドバイス５\n" +
-                    "前腕コンパクトに振ることができていますね。その調子です！";
+                case 0:
+                    forearmScoreText.text = "悪い";
+                    forearmAdvice = "前腕の振りがよくありません。\n前腕の振りが大きすぎると、リズムが速くなった時に対応できなくなるため、コンパクトに振ることが重要です。";
+                    break;
+
+                case 1:
+                    forearmScoreText.text = "普通";
+                    forearmAdvice = "前腕の振りはまずまずですが、まだ改善できます。\n前腕の振りで弦を弾くのではなく、手首の振りで弦を弾くことを意識しましょう。";
+                    break;
+
+                case 2:
+                    forearmScoreText.text = "良い";
+                    forearmAdvice = "うまく前腕を振ることができています。その調子です！";
+                    break;
             }
         }
     }

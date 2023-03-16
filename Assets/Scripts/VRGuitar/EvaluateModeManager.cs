@@ -86,9 +86,10 @@ namespace VRGuitar
                     //    $"èñ‚Ì‚š²‰ñ“]F{zScore}\n" +
                     //    $"èñ‚Ì‚™²‰ñ“]F{yScore}\n" +
                     //    $"‘O˜rF{forearmScore}";
-                    chartScript.ScoreSet(rythmScore, zScore, yScore, forearmScore);
+                    chartScript.ScoreSet(rythmScore+1, zScore+1, yScore+1, forearmScore+1);
                     menuManager.OpenRadarChart();
-                    //adviceManager.MakeAdvice(rythmScore, zScore, yScore, forearmScore);
+                    adviceManager.InitializeAdvicePanel();
+                    adviceManager.SetAdviceAndScore(rythmScore, zScore, yScore, forearmScore);
                 }
             }
         }
