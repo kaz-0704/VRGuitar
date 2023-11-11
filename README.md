@@ -6,7 +6,6 @@
 ![画像1](https://github.com/kaz-0704/VRGuitar/assets/72312199/01a7a37e-fc1b-4716-bb65-a54e926f98f5)
 Focus3(VRヘッドセット)とVIVE リストトラッカーを装着して利用する．
 <img src="(https://github.com/kaz-0704/VRGuitar/assets/72312199/8ba18cc7-4ae1-40ab-b46b-04dbcd1b6839)" width="320px">
-![VRエアギターシステムを利用している様子]()
 
 
 ## デモ動画
